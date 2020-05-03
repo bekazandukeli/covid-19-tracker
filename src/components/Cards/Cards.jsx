@@ -48,6 +48,3 @@ const Cards = ({ data: { confirmed, deaths, recovered, lastUpdate } }) => {
 };
 
 export default Cards;
-
-
-// { data: { confirmed, recovered, deaths, lastUpdate } }
