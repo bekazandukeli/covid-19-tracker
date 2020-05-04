@@ -1,7 +1,8 @@
 import React from 'react';
 import { Cards, Charts, CountryPicker } from './components';
-import styles from './App.module.css';
 import { fetchData } from './api';
+
+import styles from './App.module.css';
 
 class App extends React.Component {
     
