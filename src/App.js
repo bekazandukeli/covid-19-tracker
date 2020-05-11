@@ -1,6 +1,6 @@
 import React from 'react';
 import { Cards, Charts, CountryPicker } from './components';
-import { fetchData } from './api';
+import { fetchData, fetchCountryHistory } from './api';
 import { Typography, Link } from '@material-ui/core';
 
 import styles from './App.module.css';
@@ -11,7 +11,8 @@ class App extends React.Component {
     
     state = {
         data: {},
-        country: ''
+        country: '',
+        countryData: {}
     }
 
     async componentDidMount() {
@@ -23,10 +24,10 @@ class App extends React.Component {
     }
 
     handleCountryChange = async (country) => {
-        const fetchedData = await fetchData(country);
-        
+        const countryHistory = await fetchCountryHistory(country);    
+
         this.setState({
-            data: fetchedData,
+            countryData: countryHistory,
             country: country 
         });
     };
@@ -34,7 +35,8 @@ class App extends React.Component {
     render() {
         const {
             data,
-            country 
+            country,
+            countryData 
         } = this.state;
 
         return (
@@ -42,14 +44,17 @@ class App extends React.Component {
                 <img className={styles.image} src={image} alt="COVID-19" />
                 <Cards data={data} />
                 <CountryPicker handleCountryChange={this.handleCountryChange} />
-                <Charts data={data} country={country} />
+                <Charts data={countryData} country={country} />
                 <Typography style={{
                     marginTop: '20px', 
                     fontSize: '12px', 
                     color: 'rgba(0, 0, 0, .5)'
                     }}
-                >Data has been fetched from <Link href="https://covid19.mathdro.id/api" target="_blank">this API</Link>
-                </Typography> 
+                >Global data has been fetched from this <Link href="https://covid19.mathdro.id/api" target="_blank">API</Link>, 
+                
+                Country data has been fetched from this <Link href="https://documenter.getpostman.com/view/10808728/SzS8rjbc?version=latest" target="_blank">API</Link>.
+                </Typography>
+                 
             </div>
         );
     }

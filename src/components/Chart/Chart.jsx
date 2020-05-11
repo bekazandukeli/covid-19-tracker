@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { fetchDailyData } from '../../api';
-import { Line, Bar } from 'react-chartjs-2';
+import { Line } from 'react-chartjs-2';
 
 import styles from './Chart.module.css';
 
-const Charts = ({ data: { confirmed, recovered, deaths}, country }) => {  
+
+const Charts = ({ data, country }) => {  
     const [ dailyData, setDailyData ] = useState([]);
     
     useEffect(() => {
@@ -30,7 +31,7 @@ const Charts = ({ data: { confirmed, recovered, deaths}, country }) => {
                     }, {
                         data: dailyData.map(({ deaths }) => deaths),
                         label: 'Deaths',
-                        borderColor: 'red',
+                        borderColor: 'rgba(170, 0, 0, 1)',
                         backgroundColor: 'rgba(255 , 0, 0, .5)',
                         fill: true,
                     }]
@@ -39,25 +40,38 @@ const Charts = ({ data: { confirmed, recovered, deaths}, country }) => {
             ) : null
     );
 
-    const barChart = (
-        confirmed
+    const countryLineChart = (
+        data.length
         ? (
-            <Bar 
+            <Line 
                 data={{
-                    labels: ['Infected', 'Recovered', 'Deaths'],
+                    labels: data.map(({ date }) => date.split('T')[0]),
                     datasets: [{
-                        label: 'People',
-                        backgroundColor: [
-                            'rgba(0, 0, 255 , .5)',
-                            'rgba(0, 255, 0, .5)',
-                            'rgba(255, 0, 0, .5)'
-                        ],
-                        data: [confirmed.value, recovered.value, deaths.value]
-                    }]
-                }}
-                options = {{
-                    legend: { display: false },
-                    title: { display: true, text: `Current state in ${country}`}
+                        data: data.map(({ confirmed }) => confirmed),
+                        label: 'Infected',
+                        borderColor: '#3333ff',
+                        fill: true,
+                    }, {
+                        data: data.map(({ deaths }) => deaths),
+                        label: 'Deaths',
+                        borderColor: 'rgba(170, 0, 0, 1)',
+                        backgroundColor: 'rgba(255, 0, 0, .5)',
+                        fill: true,
+                    }, {
+                        data: data.map(({ active }) => active),
+                        label: 'Active',
+                        borderColor: 'rgba(170, 170, 0, 1)',
+                        backgroundColor: 'rgba(255, 255, 0, .5)',
+                        fill: true,
+                    }, {
+                        data: data.map(({ recovered }) => recovered),
+                        label: 'Recovered',
+                        borderColor: 'green',
+                        backgroundColor: 'rgba(0, 255, 0, .5)',
+                        fill: true,
+                    }
+                
+                ]
                 }}
             />
         ) : null
@@ -66,7 +80,7 @@ const Charts = ({ data: { confirmed, recovered, deaths}, country }) => {
     return (
         
         <div className={styles.container}>
-            {country ? barChart: lineChart}
+            {country? countryLineChart : lineChart}
         </div>
     );
 };
