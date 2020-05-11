@@ -43,7 +43,13 @@ class App extends React.Component {
                 <Cards data={data} />
                 <CountryPicker handleCountryChange={this.handleCountryChange} />
                 <Charts data={data} country={country} />
-                <Typography style={{marginTop: '20px'}}>Data has been fetched from <Link href="https://covid19.mathdro.id/api" target="_blank">this API</Link></Typography> 
+                <Typography style={{
+                    marginTop: '20px', 
+                    fontSize: '12px', 
+                    color: 'rgba(0, 0, 0, .5)'
+                    }}
+                >Data has been fetched from <Link href="https://covid19.mathdro.id/api" target="_blank">this API</Link>
+                </Typography> 
             </div>
         );
     }
