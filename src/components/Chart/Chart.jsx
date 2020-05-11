@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { fetchDailyData } from '../../api';
 import { Line } from 'react-chartjs-2';
+import { Typography } from '@material-ui/core';
 
 import styles from './Chart.module.css';
 
@@ -74,7 +75,7 @@ const Charts = ({ data, country }) => {
                 ]
                 }}
             />
-        ) : null
+        ) : <Typography style={{ fontSize: '24px' }}>We could not load data for this location, you can pick another one!</Typography>
     );
 
     return (

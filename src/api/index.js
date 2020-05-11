@@ -32,7 +32,7 @@ export const fetchCountries = async () => {
     try {
         const { data } = await axios.get(`https://api.covid19api.com/countries`);
     
-        return data.map((item) => item.Country);
+        return data.map((item) => item.Country).sort();
     } catch (error) {
         return(error);        
     }  
