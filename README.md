@@ -11,7 +11,7 @@ Source: https://github.com/adrianhajdin/project_corona_tracker
 ### I made some useful changes:<br />
 * <strong>I used those APIs for fetching the global and country specific data:</strong><br /> 
 Global: https://covid19.mathdro.id/api/daily <strong>(used in tutorial)</strong><br />
-Country: https://documenter.getpostman.com/view/10808728/SzS8rjbc?version=latest <strong>(used by me)</strong><br />
+Country: https://documenter.getpostman.com/view/10808728/SzS8rjbc?version=latest <strong>(added by me)</strong><br />
 
 * <strong>I created a line chart instead of a bar chart while specific country is chosen</strong>
 
