@@ -17,9 +17,11 @@ Country: https://documenter.getpostman.com/view/10808728/SzS8rjbc?version=latest
 
 ### To run project:<br />
 
-`git clone https://github.com/bekazandukeli/covid-19-tracker.git`<br />
-`cd covid-19-tracker`<br />
-`npm install`<br />
-`npm start`<br />
+```bash
+git clone https://github.com/bekazandukeli/covid-19-tracker.git
+cd covid-19-tracker
+npm install
+npm start
+```
 
 And open [http://localhost:3000](http://localhost:30aa) to view it in the browser.
