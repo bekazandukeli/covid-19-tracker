@@ -15,7 +15,6 @@ Country: https://documenter.getpostman.com/view/10808728/SzS8rjbc?version=latest
 
 ### To run project:<br />
 
-#### run:
 `git clone https://github.com/bekazandukeli/covid-19-tracker.git`<br />
 `cd covid-19-tracker`<br />
 `npm install`<br />
