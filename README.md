@@ -13,7 +13,7 @@ Source: https://github.com/adrianhajdin/project_corona_tracker
 Global: https://covid19.mathdro.id/api/daily <strong>(used in tutorial)</strong><br />
 Country: https://documenter.getpostman.com/view/10808728/SzS8rjbc?version=latest <strong>(added by me)</strong><br />
 
-* <strong>I created a line chart instead of a bar chart while specific country is chosen</strong>
+* <strong>I have used a line chart instead of a bar chart for a country data visualization</strong>
 
 ### To run project:<br />
 
