@@ -23,9 +23,3 @@ Country: https://documenter.getpostman.com/view/10808728/SzS8rjbc?version=latest
 `npm start`<br />
 
 And open [http://localhost:3000](http://localhost:30aa) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-
-
