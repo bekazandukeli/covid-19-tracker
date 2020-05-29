@@ -1,7 +1,7 @@
 ## Track COVID-19
 ### This application was created to track spreading of COVID-19.<br />
 
-You can see the <strong>live version</strong> of this app here: https://bekazandukeli.github.io/covid-19-tracker/<br />
+You can see the <strong>live version</strong> of this app here: https://covid19.beka.dev<br />
 
 ![COVID-19 tracker Image](https://i.imgur.com/ZhlQ6zC.png)
 
