@@ -8,7 +8,7 @@ You can see the <strong>live version</strong> of this app here: https://covid19.
 ### I made some useful changes:<br />
 * <strong>I used those APIs for fetching the global and country specific data:</strong><br /> 
 Global: https://covid19.mathdro.id/api/daily<br />
-Country: https://documenter.getpostman.com/view/10808728/SzS8rjbc?version=latest <strong>(added by me)</strong><br />
+Country: https://documenter.getpostman.com/view/10808728/SzS8rjbc?version=latest<br />
 
 * <strong>I have used a line chart instead of a bar chart for a country data visualization</strong>
 
