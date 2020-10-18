@@ -25,7 +25,8 @@ class App extends React.Component {
 
     handleCountryChange = async (country) => {
         const countryHistory = await fetchCountryHistory(country);
-        console.log(country);    
+        console.log(country);
+        window.location.hash = '#' + country    
 
         this.setState({
             countryData: countryHistory,
