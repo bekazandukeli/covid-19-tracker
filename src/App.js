@@ -8,11 +8,11 @@ import styles from './App.module.css';
 import image from './images/image.png';
 
 class App extends React.Component {
-    
+
     state = {
         data: {},
         country: '',
-        countryData: {}
+        countryData: []
     }
 
     async componentDidMount() {
@@ -25,18 +25,18 @@ class App extends React.Component {
 
     handleCountryChange = async (country) => {
         const countryHistory = await fetchCountryHistory(country);
-        window.location.hash = country;  
+        window.location.hash = country;
         this.setState({
             countryData: countryHistory,
-            country: country 
+            country: country
         });
     };
-    
+
     render() {
         const {
             data,
             country,
-            countryData 
+            countryData
         } = this.state;
 
         return (
@@ -46,15 +46,15 @@ class App extends React.Component {
                 <CountryPicker handleCountryChange={this.handleCountryChange} />
                 <Charts data={countryData} country={country} />
                 <Typography style={{
-                    marginTop: '20px', 
-                    fontSize: '12px', 
+                    marginTop: '20px',
+                    fontSize: '12px',
                     color: 'rgba(0, 0, 0, .5)'
-                    }}
-                >Global data has been fetched from this <Link href="https://covid19.mathdro.id/api" target="_blank">API</Link>, 
-                
+                }}
+                >Global data has been fetched from this <Link href="https://covid19.mathdro.id/api" target="_blank">API</Link>,
+
                 Country data has been fetched from this <Link href="https://documenter.getpostman.com/view/10808728/SzS8rjbc?version=latest" target="_blank">API</Link>.
                 </Typography>
-                 
+
             </div>
         );
     }
