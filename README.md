@@ -22,7 +22,7 @@ npm start
 ```
 ### To deploy:<br />
 ```bash
-npm run build
+npm run deploy
 ```
 
 And open [http://localhost:3000](http://localhost:30aa) to view it in the browser.
