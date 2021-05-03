@@ -20,7 +20,7 @@ cd covid-19-tracker
 npm install
 npm start
 ```
-### To run deploy:<br />
+### To deploy:<br />
 ```bash
 npm run build
 ```
